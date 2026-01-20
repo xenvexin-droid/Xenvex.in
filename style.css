@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617 70%);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #22d3ee, #a78bfa, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #22d3ee;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn {
+  background: linear-gradient(135deg, #22d3ee, #6366f1, #a78bfa);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #020617;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+}
+
+.big {
+  padding: 14px 32px;
+  font-size: 16px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 90px 8%;
+  min-height: 90vh;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  max-width: 520px;
+  opacity: 0.85;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.mockup {
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(135deg, #22d3ee, #6366f1, #a78bfa);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #020617;
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 30px 80px rgba(99,102,241,0.45);
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 38px;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 35px 25px;
+  border-radius: 22px;
+  transition: 0.35s;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  border-color: rgba(99,102,241,0.6);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* ================= SECTIONS ================= */
+
+.about, .contact {
+  padding: 90px 15%;
+  text-align: center;
+}
+
+.about {
+  background: linear-gradient(180deg, #020617, #020617, #020617);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+  opacity: 0.7;
+  background: #020617;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= EDITOR UI ================= */
+
+.editor-container {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.tools {
+  width: 260px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  border-right: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  padding: 22px;
+}
+
+.tools h3 {
+  margin-bottom: 15px;
+}
+
+.tools input {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.workspace {
+  flex: 1;
+  background: radial-gradient(circle at top, #020617, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.workspace img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 14px;
+  display: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+#hint {
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

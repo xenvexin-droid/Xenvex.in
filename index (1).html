@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xenvex | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+  <div class="landing-box">
+    <h1>XENVEX</h1>
+    <p>Create designs quickly and easily</p>
+    <a href="login.html"><button>Login</button></a>
+    <a href="signup.html"><button>Sign Up</button></a>
+  </div>
+<script>
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (email === "admin@gmail.com" && password === "admin123") {
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "editor.html";
+  } else {
+    alert("Invalid email or password");
+  }
+}
+</script>
+</body>
+</html>

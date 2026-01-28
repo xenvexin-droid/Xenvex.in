@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xenvex | Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script>
+if (!localStorage.getItem("loggedIn")) {
+  window.location.href = "index.html";
+}
+</script>
+
+  <div class="toolbar">
+    <button onclick="addText()">Add Text</button>
+    <input type="color" onchange="changeColor(this.value)" title="Text Color">
+    <button onclick="makeBold()">Bold</button>
+    <button onclick="makeItalic()">Italic</button>
+    <button onclick="clearCanvas()">Clear</button>
+  </div>
+
+  <div id="canvas" contenteditable="true">
+    Start editing here...
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

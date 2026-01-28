@@ -1,0 +1,65 @@
+// Dummy user storage (frontend only)
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+function signup() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!name || !email || !password) {
+    alert("All fields are required");
+    return;
+  }
+
+  // Check if user exists
+  if (users.find(u => u.email === email)) {
+    alert("User already exists");
+    return;
+  }
+
+  users.push({name, email, password});
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Sign up successful! Login now.");
+  window.location.href = "login.html";
+}
+
+function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  const user = users.find(u => u.email === email && u.password === password);
+
+  if (user) {
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Invalid email or password");
+  }
+}
+
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  window.location.href = "login.html";
+}
+
+// Dashboard
+if (document.getElementById("userEmail")) {
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) window.location.href = "login.html";
+  else document.getElementById("userEmail").innerText = user.email;
+}
+
+// Go to editor
+function goToEditor() {
+  window.location.href = "editor.html";
+}
+
+// Editor functions
+function downloadText() {
+  const text = document.getElementById("editor").value;
+  const blob = new Blob([text], {type: "text/plain"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "myfile.txt";
+  a.click();
+}
